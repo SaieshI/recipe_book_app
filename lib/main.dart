@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'homeScreen.dart';
-import 'detailsScreen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Navigation',
-      initialRoute: '/',
-      routes: {
-        '/': (context) => HomeScreen(),
-        '/details': (context) => DetailsScreen(),
-      },
+      title: 'Recipe Book',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: const HomeScreen(), 
     );
   }
 }
